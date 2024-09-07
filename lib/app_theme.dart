@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static const Primary = Color(0xFF39A552);
   static const navy = Color(0xFF4F5A69);
+  static const gray = Color(0xFF79828B);
   static const white = Color(0xFFFFFFFF);
   static const black = Color(0xFF303030);
   static ThemeData lightTheme = ThemeData(
@@ -10,7 +11,7 @@ class AppTheme {
     appBarTheme: AppBarTheme(
       backgroundColor: AppTheme.Primary,
       centerTitle: true,
-      foregroundColor: AppTheme.white,
+      foregroundColor: AppTheme.white,  
       titleTextStyle: TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.w400,
@@ -26,6 +27,10 @@ class AppTheme {
       titleLarge: TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.bold,
+      ),
+      titleSmall: TextStyle(
+        fontSize:14,
+        fontWeight: FontWeight.w400,
       ),
     ),
   );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:newapp/app_theme.dart';
 import 'package:newapp/category/category_model.dart';
 
+
 class CategoryItem extends StatelessWidget {
   final int index;
   final CategoryModel Category;
@@ -17,7 +18,7 @@ class CategoryItem extends StatelessWidget {
           bottomLeft: Radius.circular(index.isEven ? 24 : 0),
           bottomRight: Radius.circular(index.isOdd ? 24 : 0),
         ),
-        color:Category.color,
+        color: Category.color,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -33,6 +34,7 @@ class CategoryItem extends StatelessWidget {
                 .titleLarge
                 ?.copyWith(color: AppTheme.white),
           ),
+          
         ],
       ),
     );
