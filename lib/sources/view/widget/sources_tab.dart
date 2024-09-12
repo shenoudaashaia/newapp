@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:newapp/modles/sourcesResponse/sources.dart';
+import 'package:newapp/sources/date/modle/sources.dart';
 import 'package:newapp/news/news_item.dart';
 import 'package:newapp/news/news_list.dart';
-import 'package:newapp/tabes/tab_item.dart';
+import 'package:newapp/sources/view/widget/tab_item.dart';
 
 class SourcesTab extends StatefulWidget {
   SourcesTab({required this.sources});

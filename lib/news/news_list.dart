@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:newapp/API/API_services.dart';
 import 'package:newapp/modles/news_responce/news_responce.dart';
-import 'package:newapp/modles/sourcesResponse/sources.responce.dart';
+import 'package:newapp/sources/date/modle/sources.responce.dart';
 import 'package:newapp/news/news_item.dart';
 import 'package:newapp/widget/error_indigator.dart';
 import 'package:newapp/widget/loading_indigator.dart';
