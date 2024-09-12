@@ -1,49 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:newapp/news/news_item.dart';
-import 'package:newapp/tabes/tab_item.dart';
+import 'package:newapp/API/API_services.dart';
+import 'package:newapp/tabes/sources_tab.dart';
+import 'package:newapp/widget/error_indigator.dart';
+import 'package:newapp/widget/loading_indigator.dart';
 
-class CategoriesDetails extends StatefulWidget {
+class CategoriesDetails extends StatelessWidget {
   final String categoryId;
 
   CategoriesDetails({required this.categoryId});
 
   @override
-  State<CategoriesDetails> createState() => _CategoriesDetailsState();
-}
-
-class _CategoriesDetailsState extends State<CategoriesDetails> {
-  int selectedTabindex = 0;
-  final sources = List.generate(10, (index) => "source ${index}");
-  @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        DefaultTabController(
-          length: sources.length,
-          child: TabBar(
-              tabAlignment: TabAlignment.start,
-              isScrollable: true,
-              indicatorColor: Colors.transparent,
-              dividerColor: Colors.transparent,
-              onTap: (index) => setState(() {
-                    selectedTabindex = index;
-                  }),
-              tabs: sources
-                  .map(
-                    (source) => TabItem(
-                      isSelected: sources.indexOf(source) == selectedTabindex,
-                      source: source,
-                    ),
-                  )
-                  .toList()),
-        ),
-        Expanded(
-            child: ListView.builder(
-          itemBuilder: (_, index) => NewsItem(),
-          itemCount: 10,
-        )),
-      ],
+    return FutureBuilder(
+      future: APIServices.getServices(categoryId),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return LoadingIndigator();
+        } else if (snapshot.hasError || snapshot.data?.status != 'ok') {
+          return ErrorIndigator();
+        } else {
+          final sources = snapshot.data?.sources ?? [];
+          return SourcesTab(sources: sources);
+        }
+      },
     );
   }
 }

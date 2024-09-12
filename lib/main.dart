@@ -7,17 +7,15 @@ void main() {
 }
 
 class NewsApp extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner:false,
-      routes:{
-        HomeScreen.routName:(_) => HomeScreen(),
+      debugShowCheckedModeBanner: false,
+      routes: {
+        HomeScreen.routName: (_) => HomeScreen(),
       },
-      theme:AppTheme.lightTheme,
-      themeMode:ThemeMode.light,
+      theme: AppTheme.lightTheme,
+      themeMode: ThemeMode.light,
     );
   }
 }

@@ -11,7 +11,7 @@ class AppTheme {
     appBarTheme: AppBarTheme(
       backgroundColor: AppTheme.Primary,
       centerTitle: true,
-      foregroundColor: AppTheme.white,  
+      foregroundColor: AppTheme.white,
       titleTextStyle: TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.w400,
@@ -29,7 +29,7 @@ class AppTheme {
         fontWeight: FontWeight.bold,
       ),
       titleSmall: TextStyle(
-        fontSize:14,
+        fontSize: 14,
         fontWeight: FontWeight.w400,
       ),
     ),

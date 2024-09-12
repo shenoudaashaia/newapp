@@ -12,13 +12,21 @@ class CategorisGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<CategoryModel> categories = [
-      CategoryModel(color: Color(0xFFC91C22), name: "sport", imageName: "ball", id: ''),
       CategoryModel(
-          color: Color(0xFFC91C22), name: "politics", imageName: "Politics", id: ''),
-      CategoryModel(color: Color(0xFFC91C22), name: "sport", imageName: "ball", id: ''),
-      CategoryModel(color: Color(0xFFC91C22), name: "sport", imageName: "ball", id: ''),
-      CategoryModel(color: Color(0xFFC91C22), name: "sport", imageName: "ball", id: ''),
-      CategoryModel(color: Color(0xFFC91C22), name: "sport", imageName: "ball", id: ''),
+          color: Color(0xFFC91C22), name: "sport", imageName: "ball", id:"sports"),
+      CategoryModel(
+          color: Color(0xFFC91C22),
+          name: "Business",
+          imageName: "bussines",
+          id: 'business'),
+      CategoryModel(
+          color: Color(0xFFC91C22), name: "sport", imageName: "ball", id: ''),
+      CategoryModel(
+          color: Color(0xFFC91C22), name: "sport", imageName: "ball", id: ''),
+      CategoryModel(
+          color: Color(0xFFC91C22), name: "sport", imageName: "ball", id: ''),
+      CategoryModel(
+          color: Color(0xFFC91C22), name: "sport", imageName: "ball", id: ''),
     ];
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),

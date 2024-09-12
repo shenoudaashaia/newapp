@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:newapp/app_theme.dart';
 import 'package:newapp/category/category_model.dart';
 
-
 class CategoryItem extends StatelessWidget {
   final int index;
   final CategoryModel Category;
@@ -34,7 +33,6 @@ class CategoryItem extends StatelessWidget {
                 .titleLarge
                 ?.copyWith(color: AppTheme.white),
           ),
-          
         ],
       ),
     );
