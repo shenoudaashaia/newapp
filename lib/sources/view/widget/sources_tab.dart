@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:newapp/sources/date/modle/sources.dart';
-import 'package:newapp/news/news_item.dart';
-import 'package:newapp/news/news_list.dart';
+import 'package:newapp/news/view/widget/news_list.dart';
 import 'package:newapp/sources/view/widget/tab_item.dart';
 
 class SourcesTab extends StatefulWidget {
-  SourcesTab({required this.sources});
+  SourcesTab(this.sources);
 
   final List<Source> sources;
   @override
@@ -13,7 +12,8 @@ class SourcesTab extends StatefulWidget {
 }
 
 class _SourcesTabState extends State<SourcesTab> {
-  int selectedTabindex = 0;
+  int selectedTabIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,20 +26,22 @@ class _SourcesTabState extends State<SourcesTab> {
               indicatorColor: Colors.transparent,
               dividerColor: Colors.transparent,
               onTap: (index) => setState(() {
-                    selectedTabindex = index;
+                
+                    selectedTabIndex = index;
                   }),
               tabs: widget.sources
                   .map(
                     (source) => TabItem(
-                      isSelected:
-                          widget.sources.indexOf(source) == selectedTabindex,
                       source: source.name ?? '',
+                      isSelected:
+                          widget.sources.indexOf(source) == selectedTabIndex,
                     ),
                   )
                   .toList()),
         ),
         Expanded(
-            child:NewsList(widget.sources[selectedTabindex].id ?? '')),
+          child: NewsList(widget.sources[selectedTabIndex].id ?? ""),
+        ),
       ],
     );
   }
